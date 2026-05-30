@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  translation:
+    build: ./Language-Translation-Tool
+    ports:
+      - "8501:8501"
+  object-detection:
+    build: ./Object-Detection-Project
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Object-Detection-Project/yolov8n.pt:/app/yolov8n.pt
